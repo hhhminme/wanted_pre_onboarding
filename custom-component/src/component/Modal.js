@@ -19,16 +19,16 @@ const Modal = ({ componentName }) => {
         {modalState ? (
           <>
             <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50">
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-1/3 bg-white">
+              <div className="relative flex flex-col w-[140px] sm:w-1/3 border-0 rounded-lg shadow-lg bg-white">
                 <button
-                  className="text-black font-bold px-6 py-2"
+                  className="px-6 py-2 text-black font-bold"
                   type="button"
                   onClick={() => setModalState(false)}
                 >
                   X
                 </button>
-                <div className="flex justify-center p-5 rounded-t">
-                  <h2 className="text-xl font-semibold text-purple-700">
+                <div className="flex justify-center p-5">
+                  <h2 className=" text-purple-700 text-[10px] md:text-xl font-semibold">
                     Hello CodeStates!
                   </h2>
                 </div>
