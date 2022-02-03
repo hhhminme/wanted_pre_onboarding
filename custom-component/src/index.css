@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Component 카드 배경*/
+  .componentbg {
+    @apply w-[150px] sm:min-w-0 sm:w-1/2 h-60 p-2 first:mt-10 last:mb-10 mb-5 m-auto border border-gray-300 rounded-lg bg-white shadow-md;
+  }
+  /* 토글 배경 */
+  .togglebox {
+    @apply w-16 sm:w-20 h-10 flex items-center flex-shrink-0 ml-4 p-1 bg-gray-300 rounded-full;
+  }
+  /* 토글 내 버튼 */
+  .toggleslide {
+    @apply after:w-8 after:h-8 after:bg-white after:rounded-full after:shadow-md;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
