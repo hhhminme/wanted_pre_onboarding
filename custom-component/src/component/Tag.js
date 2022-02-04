@@ -23,7 +23,7 @@ const Tag = ({ componentName }) => {
           <ul className="flex flex-wrap p-0 mt-[8px]">
             {tags.map((tag, idx) => (
               <li
-                className="flex align-middle justify-center w-auto h-[32px] px-2 ml-2 text-whitelist-none rounded-lg bg-purple-700"
+                className="flex align-middle justify-center w-auto h-[32px] px-2 ml-2 text-whitelist-none rounded-lg bg-purple-700 text-white"
                 key={idx}
               >
                 <span className="mt-1">{tag}</span>
