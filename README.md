@@ -37,6 +37,8 @@
 
 ## 2. 브랜칭 전략
 
+![Untitled-Page-1](https://user-images.githubusercontent.com/54930877/152672453-8ee9899c-61d8-4771-bee1-1a49e13b3cee.jpg)
+
 **Main branch**
 
 - 배포 가능한 상태만을 관리하는 브랜치입니다. Vercel과 배포 파이프라인이 연결되어 바로 배포된 도메인으로 확인할 수 있게 하였습니다.
@@ -56,23 +58,29 @@
 
 # 프로젝트 설명
 
-[구현과제 바로 보러 가기](https://wanted-pre-onboarding-danphv3pp-hhhminme.vercel.app/)
-
 ## 1. 구현과제 설명
 
-1. **Toggle**
+### 1. **Toggle**
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/54930877/152672485-8d6c3c7d-83dc-444b-8d52-f02a2213c2d6.gif)
 
-2. **Modal**
+### 2. **Modal**
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/54930877/152672495-618aa717-5232-4124-b869-9c9e14f0e9f4.gif)
 
-3. **Tab**
+### 3. **Tab**
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/54930877/152672498-63e13395-754c-4be0-a6e3-675b3f999406.gif)
 
-4. **Tag**
+### 4. **Tag**
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/54930877/152672507-bd0a130d-26e2-489f-8ca7-90e9f24ee5cf.gif)
 
-5. **AutoComplete**
+### 5. **AutoComplete**
+미구현
 
-6. **ClickToEdit**
+### 6. **ClickToEdit**
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/54930877/152672510-a7303d5e-36bd-4233-950a-66727e1e497d.gif)
 
 ## 2. 사용한 기술
+
+![Untitled-Page-2](https://user-images.githubusercontent.com/54930877/152672460-0e535109-1e9c-4d88-972d-c2ab8d510773.jpg)
 
 ## 3. 설치방법
 
