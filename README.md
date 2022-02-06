@@ -4,16 +4,16 @@
 
 # 목차
 
-1. **깃 컨벤션 설명**
-   1. 커밋 컨벤션
-   2. 브랜칭 전략
-2. **프로젝트 설명**
-   1. 구현 과제 설명
-   2. 사용한 기술
-   3. 설치방법
-   4. 디렉토리 구조
+1. [**깃 컨벤션**](#깃-컨벤션)
+   1. [커밋 컨벤션](#1-커밋-컨벤션)
+   2. [브랜칭 전략](#2-브랜칭-전략)
+2. [**프로젝트**](#프로젝트)
+   1. [구현 과제 설명](#1-구현과제-설명)
+   2. [사용한 기술](#2-사용한-기술)
+   3. [설치방법](#3-설치방법)
+   4. [디렉토리 구조](#4-디렉토리-구조)
 
-# 협업 컨벤션
+# 깃 컨벤션
 
 ## 1. 커밋 컨벤션
 
@@ -29,6 +29,8 @@
 - chore : 기타 변경사항, 셋팅 ㅗ간련 (빌드 스크립트 수정 등)
 ```
 
+커밋 시 아래의 규칙을 지켰습니다.
+
 1. 제목은 명령문으로 한다.
 2. 제목 끝에 마침표(.)를 쓰지 않는다.
 3. 제목과 본문을 한 줄 띄워 분리한다.
@@ -42,8 +44,8 @@
 **Main branch**
 
 - 배포 가능한 상태만을 관리하는 브랜치입니다. Vercel과 배포 파이프라인이 연결되어 바로 배포된 도메인으로 확인할 수 있게 하였습니다.
-  - 새로운 Feature가 추가되었을때 1.0 → 2.0 과 같이 정수 버전을 릴리즈 합니다.
-  - 새로운 기능이 추가되지 않고 버그 및 디자인 수정의 경우 1.0 → 1.1 과 같이 소수점 버전을 릴리즈 합니다.
+  - 새로운 Feature가 추가되었을때 1.0 → 2.0 과 같이 정수 버전을 릴리즈 했습니다.
+  - 새로운 기능이 추가되지 않고 버그 및 디자인 수정의 경우 1.0 → 1.1 과 같이 소수점 버전을 릴리즈 했습니다.
 
 **Develop branch**
 
@@ -56,31 +58,51 @@
 - feature 브랜치는 그 기능을 다 완성할때까지 유지하고, 다 완성되면 Develop 브랜치로 merge합니다.
 - merge 후 배포가 완료된 브랜치는 바로 삭제 하고 있습니다.
 
-# 프로젝트 설명
+# 프로젝트
 
 ## 1. 구현과제 설명
 
 ### 1. **Toggle**
+
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/54930877/152672485-8d6c3c7d-83dc-444b-8d52-f02a2213c2d6.gif)
 
 ### 2. **Modal**
+
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/54930877/152672495-618aa717-5232-4124-b869-9c9e14f0e9f4.gif)
 
 ### 3. **Tab**
+
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/54930877/152672498-63e13395-754c-4be0-a6e3-675b3f999406.gif)
 
 ### 4. **Tag**
+
 ![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/54930877/152672507-bd0a130d-26e2-489f-8ca7-90e9f24ee5cf.gif)
 
 ### 5. **AutoComplete**
-미구현
+
+구현 중 입니다.
 
 ### 6. **ClickToEdit**
+
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/54930877/152672510-a7303d5e-36bd-4233-950a-66727e1e497d.gif)
 
 ## 2. 사용한 기술
 
 ![Untitled-Page-2](https://user-images.githubusercontent.com/54930877/152672460-0e535109-1e9c-4d88-972d-c2ab8d510773.jpg)
+
+### React/Javascript
+
+프리온보딩 권장 기술인 Javascript와 React를 중심으로 개발하였습니다.
+ES6+ 문법을 최대한 활용하여 개발하고자 노력했습니다. Class Component가 아닌 Functional Component를 이용하였고 Hooks 을 활용하여 개발을 하였습니다.
+
+### Code Convention/Deploy
+
+구현과제의 양이 많지 않고 컴포넌트 구조가 복잡하지 않아 [Tailwind CSS](https://tailwindcss.com/)를 활용하였습니다.
+CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.github.io/TIL/CSS/css-property-order.html#intro)를 참고하여 정리하였습니다.
+
+읽기 쉬운 코드를 위해 code Formatter 역할을 해주는 [Prettier](https://prettier.io/)와 [ESLint](https://eslint.org/)를 이용하여 표준에 맞는 코드컨벤션을 지키려 노력하였습니다.
+
+구현과제 Demo 확인을 위해 간단하게 Headless CMS인 [Vercel](https://vercel.com/)을 이용하여 배포하였습니다.
 
 ## 3. 설치방법
 
