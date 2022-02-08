@@ -60,6 +60,7 @@ const AutoComplete = ({ componentName }) => {
         })
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputValue]);
 
   const inputChange = (event) => {
