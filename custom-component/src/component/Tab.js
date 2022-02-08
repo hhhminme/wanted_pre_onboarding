@@ -19,7 +19,7 @@ const Tab = ({ componentName }) => {
         tabActiveState === idx
           ? " bg-purple-700 text-white"
           : "bg-gray-200 text-gray-400"
-      } w-1/3 duration-200 ease-in-out font-semibold  `}
+      } w-1/3 duration-200 ease-in-out font-semibold`}
       key={idx}
       onClick={() => {
         clickHandler(idx);
