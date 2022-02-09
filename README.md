@@ -1,6 +1,6 @@
 # 원티드 프리온보딩 코스 구현과제 - 허민
 
-✨[구현과제 바로 보러 가기 링크](https://wanted-pre-onboarding-danphv3pp-hhhminme.vercel.app/)✨
+✨[구현과제 바로 보러 가기 링크](https://wanted-pre-onboarding-xi.vercel.app/)✨
 
 # **목차**
 
@@ -37,7 +37,7 @@ CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.g
 
 ## 2. **구현과제 설명**
 
-[구현과제 바로 보러가기 링크](https://wanted-pre-onboarding-danphv3pp-hhhminme.vercel.app/)
+✨[구현과제 바로 보러 가기 링크](https://wanted-pre-onboarding-xi.vercel.app/)✨
 
 ### 1. **Toggle**
 
@@ -119,7 +119,6 @@ CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.g
 
 ![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/54930877/153160304-0361d360-9f1f-4a88-9137-eb99bd84a62e.gif)
 
-
 - **구현한 방법과 이유**
 
 자동완성이 될 내역의 Data는 배열에 담아 놓았습니다. [Effect Hook](https://reactjs.org/docs/hooks-effect.html)을 이용하여 input값을 입력하였을때 입력된 값을 포함하는 내용만 [Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)통해 필터링 된 상태로 변경한다. 그럼 해당 상태에 대해 [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 통해 자동 완성 리스트를 화면에 출력해주었습니다.
@@ -149,7 +148,7 @@ input을 클릭하였을 때 하단만 border-radius가 사라지고 자동완�
 
 ## **3. 설치방법**
 
-[구현과제 바로 보러 가기](https://wanted-pre-onboarding-danphv3pp-hhhminme.vercel.app/)
+✨[구현과제 바로 보러 가기 링크](https://wanted-pre-onboarding-xi.vercel.app/)✨
 
 ```Bash
 $ git clone https://github.com/hhhminmewanted_pre_onboarding.git
