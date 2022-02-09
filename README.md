@@ -35,8 +35,6 @@ CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.g
 
 구현과제 Demo 확인을 위한 Headless CMS인 [Vercel](https://vercel.com/)을 이용하여 배포하였습니다.
 
----
-
 ## 2. **구현과제 설명**
 
 [구현과제 바로 보러가기 링크](https://wanted-pre-onboarding-danphv3pp-hhhminme.vercel.app/)
@@ -51,7 +49,7 @@ CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.g
 
   Toggle은 외부의 Toggle Box와 내부의 Toggle Slider로 구분했습니다. [Tailwind의 JIT(just in time) mode active](https://v2.tailwindcss.com/docs/just-in-time-mode)를 활용하여 Toggle Box가 클릭되었을때 움직이고 Toggle Slider의 배경색이 바꾸도록 하였습니다.
 
-  이때 Toggle Switch 가 "ON", "OFF" 인지 확인하기 위해 useState hook과 [Conditional(Ternary) Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)를 사용하였습니다.
+  이때 Toggle Switch 가 "ON", "OFF" 인지 확인하기 위해 [State Hook](https://reactjs.org/docs/hooks-state.html)과 [Conditional(Ternary) Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)를 사용하였습니다.
 
 - **구현하면서 어려웠던점과 해결**
 
@@ -65,7 +63,7 @@ CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.g
 
 - **구현한 방법과 이유**
 
-  useState hook을 활용하여 Open Modal Button의 클릭유무를 확인하였고 [Conditional(Ternary) Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)를 통해 아래와 같은 로직으로 코드가 작동하도록 구현했습니다.
+  [State Hook]()을 활용하여 Open Modal Button의 클릭유무를 확인하였고 [Conditional(Ternary) Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)를 통해 아래와 같은 로직으로 코드가 작동하도록 구현했습니다.
 
   ```
   Open Modal button이 클릭됨 ? modal창 열림 : null
@@ -73,7 +71,7 @@ CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.g
 
 - **구현하면서 어려웠던점과 해결**
 
-  modal의 위치를 컴포넌트 가운데가 아닌 화면 가운데 두는 것이 어려웠습니다. 이를 해결하고자 CSS property 중 [inset](https://tailwindcss.com/docs/top-right-bottom-left#placing-a-positioned-element)을 활용하여 부모 요소의 가운데 오도록 레이아웃을 만들었스빈다.
+  modal의 위치를 컴포넌트 가운데가 아닌 화면 가운데 두는 것이 어려웠습니다. 이를 해결하고자 CSS property 중 [inset](https://tailwindcss.com/docs/top-right-bottom-left#placing-a-positioned-element)을 활용하여 부모 요소의 가운데 오도록 레이아웃을 만들었습니다.
 
   반응형으로 구현시 modal 밖으로 content가 튀어나오는걸 막는게 어려웠습니다. 이를 CSS property 중 [overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-x)를 통해 해결하였습니다.
 
@@ -84,12 +82,12 @@ CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.g
 - **구현한 방법과 이유**
 
   Tab 목록을 객체로 매핑해주었습니다. 코드의 반복되는 list 를
-  [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 통해 표현해주었습니다. 각 list에는 ClickEventHandler()를 두어 어떤 탭이 눌렸는지 구분하였습니다. 이때 id값은 useState hook을 통해 관리하습니다. 컴포넌트가 바뀌어야 할 부분에 객체의 key값으로 객체의 value를 가져오는 형태로 만들었습니다.
+  [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 통해 표현해주었습니다. 각 list에는 ClickEventHandler()를 두어 어떤 탭이 눌렸는지 구분하였습니다. 이때 id값은 [State Hook]()을 통해 관리하습니다. 컴포넌트가 바뀌어야 할 부분에 객체의 key값으로 객체의 value를 가져오는 형태로 만들었습니다.
 
 - **구현하면서 어려웠던점과 해결**
 
   반복되는 li 태그를 어떻게 리팩토링 할지 고민하였고 [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 사용하였습니다.
-  탭 클릭 시 탭 배경의 색을 변경해주기 위해 [:active](https://developer.mozilla.org/en-US/docs/Web/CSS/:active)를 사용해주었습니다. 문제는 클릭한 순간만 색이 바뀌어서 useState hook을 이용하여 클릭된 탭의 상태를 관리하였습니다.
+  탭 클릭 시 탭 배경의 색을 변경해주기 위해 [:active](https://developer.mozilla.org/en-US/docs/Web/CSS/:active)를 사용해주었습니다. 문제는 클릭한 순간만 색이 바뀌어서 [State Hook]()을 이용하여 클릭된 탭의 상태를 관리하였습니다.
 
 ### 4. **Tag**
 
@@ -97,7 +95,7 @@ CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.g
 
 - **구현한 방법과 이유**
 
-  useState hook을 통해 사용자가 입력한 내역을 관리합니다. 이때 사용자에게 보여지는 tag와 저장한 상태를 매핑해주는 방식으로 구현하였습니다.
+  [State Hook]()을 통해 사용자가 입력한 내역을 관리합니다. 이때 사용자에게 보여지는 tag와 저장한 상태를 매핑해주는 방식으로 구현하였습니다.
 
   태그를 저장할때는 [Spread syntax(...)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) 통해 항상 마지막 위치에 저장되도록 하였습니다.
 
@@ -119,24 +117,32 @@ CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.g
 
 ### 5. **AutoComplete**
 
-구현 중 입니다.
-
 - **구현한 방법과 이유**
+
+자동완성이 될 내역의 Data는 배열에 담아 놓았다. [Effect Hook](https://reactjs.org/docs/hooks-effect.html)을 이용하여 input값을 입력하였을때 입력된 값을 포함하는 내용만 [Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)통해 필터링 된 상태로 변경한다. 그럼 해당 상태에 대해 [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 통해 자동 완성 리스트를 화면에 출력해주었다.
+
+이때 웹 접근성을 높이기 위해 키보드 'ArrowUp','ArrowDown' 버튼으로 내역의 리스트를 고를 수 있게 하였다. 이를 위해 [State Hook]()으로 현재 자동완성 리스트의 index의 상태를 관리하여 자동완성 리스트의 key값과 index 값이 같은 경우 input에 value에 저장되도록 하였다.
+
 - **구현하면서 어려웠던점과 해결**
+
+해당 문제의 구현이 가장 오래걸렸다. 실력이 부족하여 인터넷에 많이 구글링하였다.
+[Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 잘 이용해야 했고, [Effect Hook]()를 적절하게 이용해 input value에 대한 상태를 관찰하며 필터링을 해주는 것이 중요했다.
+
+또한 modal과 비슷하게 input value가 있을때와 없을 때, 자동완성 리스트에 값이 있을때와 없을 때를 비교해주며 창을 띄워줘야 어려웠다.
+
+input을 클릭하였을 때 하단만 border-radius가 사라지고 자동완성 리스트가 붙으면서 리스트의 하단에 border-radius가 나타나도록 구현하는 부분이 어려웠다. 태그의 상속을 보면 `ul > li` 와 같이 되어 있는데 `ul`에 라운드 처리를 해줘도 `li` 에는 라운드가 지지 않는 문제점이 있었고 [:last-child](https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child)를 활용하여 해당 문제를 해결해주었다.
 
 ### 6. **ClickToEdit**
 
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/54930877/152672510-a7303d5e-36bd-4233-950a-66727e1e497d.gif)
 
 - **구현한 방법과 이유**
-  변경하고자 하는 요소에 [DoubleClickEvent](https://medium.com/trabe/prevent-click-events-on-double-click-with-react-with-and-without-hooks-6bf3697abc40)가 발생하면 useState hook을 통해 해당 요소의 수정가능 상태를 관리합니다. 그리고 [Conditional(Ternary) Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)를 통해 값에 따라 display되는 요소를 달리하였습니다.
+  변경하고자 하는 요소에 [DoubleClickEvent](https://medium.com/trabe/prevent-click-events-on-double-click-with-react-with-and-without-hooks-6bf3697abc40)가 발생하면 [State Hook]()을 통해 해당 요소의 수정가능 상태를 관리합니다. 그리고 [Conditional(Ternary) Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)를 통해 값에 따라 display되는 요소를 달리하였습니다.
   ```
    요소가 수정가능 상태값이 true라면 ? input 요소가 보인다 : 요소의 값이 보인다.
   ```
 - **구현하면서 어려웠던점과 해결**
-  [DoubleClickEvent](https://medium.com/trabe/prevent-click-events-on-double-click-with-react-with-and-without-hooks-6bf3697abc40)가 존재 하는지 처음 알았습니다. 그래서 이를 해결하기 위해 구글링을 하여 해당 문제를 해결하였습니다.
-
----
+- [DoubleClickEvent](https://medium.com/trabe/prevent-click-events-on-double-click-with-react-with-and-without-hooks-6bf3697abc40)가 존재 하는지 처음 알았습니다. 그래서 이를 해결하기 위해 구글링을 하여 해당 문제를 해결하였습니다.
 
 ## **3. 설치방법**
 
@@ -148,8 +154,6 @@ $ cd custom-component
 $ npm install
 $ npm start
 ```
-
----
 
 ## **4. 디렉토리 구조**
 
@@ -201,8 +205,6 @@ $ npm start
 3. 제목과 본문을 한 줄 띄워 분리한다.
 4. 본문은 “어떻게" 보다 “무엇을", “왜" 설명한다.
 5. 본문에 여러줄의 메시지를 작성할 땐 “-”로 구분한다.
-
----
 
 ## **2. 브랜칭 전략**
 
