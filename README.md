@@ -122,18 +122,18 @@ CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.g
 
 - **구현한 방법과 이유**
 
-자동완성이 될 내역의 Data는 배열에 담아 놓았다. [Effect Hook](https://reactjs.org/docs/hooks-effect.html)을 이용하여 input값을 입력하였을때 입력된 값을 포함하는 내용만 [Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)통해 필터링 된 상태로 변경한다. 그럼 해당 상태에 대해 [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 통해 자동 완성 리스트를 화면에 출력해주었다.
+자동완성이 될 내역의 Data는 배열에 담아 놓았습니다. [Effect Hook](https://reactjs.org/docs/hooks-effect.html)을 이용하여 input값을 입력하였을때 입력된 값을 포함하는 내용만 [Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)통해 필터링 된 상태로 변경한다. 그럼 해당 상태에 대해 [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 통해 자동 완성 리스트를 화면에 출력해주었습니다.
 
-이때 웹 접근성을 높이기 위해 키보드 'ArrowUp','ArrowDown' 버튼으로 내역의 리스트를 고를 수 있게 하였다. 이를 위해 [State Hook]()으로 현재 자동완성 리스트의 index의 상태를 관리하여 자동완성 리스트의 key값과 index 값이 같은 경우 input에 value에 저장되도록 하였다.
+이때 웹 접근성을 높이기 위해 키보드 'ArrowUp','ArrowDown' 버튼으로 내역의 리스트를 고를 수 있게 하였습니다. 이를 위해 [State Hook]()으로 현재 자동완성 리스트의 index의 상태를 관리하여 자동완성 리스트의 key값과 index 값이 같은 경우 input에 value에 저장되도록 하였습니다.
 
 - **구현하면서 어려웠던점과 해결**
 
-해당 문제의 구현이 가장 오래걸렸다. 실력이 부족하여 인터넷에 많이 구글링하였다.
-[Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 잘 이용해야 했고, [Effect Hook]()를 적절하게 이용해 input value에 대한 상태를 관찰하며 필터링을 해주는 것이 중요했다.
+해당 문제의 구현이 가장 오래걸렸다. 실력이 부족하여 인터넷에 많이 구글링하였습니다.
+[Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 잘 이용해야 했고, [Effect Hook]()를 적절하게 이용해 input value에 대한 상태를 관찰하며 필터링을 해주는 것이 중요했습니다.
 
-또한 modal과 비슷하게 input value가 있을때와 없을 때, 자동완성 리스트에 값이 있을때와 없을 때를 비교해주며 창을 띄워줘야 어려웠다.
+또한 modal과 비슷하게 input value가 있을때와 없을 때, 자동완성 리스트에 값이 있을때와 없을 때를 비교해주며 창을 띄워줘야 어려웠습니다.
 
-input을 클릭하였을 때 하단만 border-radius가 사라지고 자동완성 리스트가 붙으면서 리스트의 하단에 border-radius가 나타나도록 구현하는 부분이 어려웠다. 태그의 상속을 보면 `ul > li` 와 같이 되어 있는데 `ul`에 라운드 처리를 해줘도 `li` 에는 라운드가 지지 않는 문제점이 있었고 [:last-child](https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child)를 활용하여 해당 문제를 해결해주었다.
+input을 클릭하였을 때 하단만 border-radius가 사라지고 자동완성 리스트가 붙으면서 리스트의 하단에 border-radius가 나타나도록 구현하는 부분이 어려웠습니다. 태그의 상속을 보면 `ul > li` 와 같이 되어 있는데 `ul`에 라운드 처리를 해줘도 `li` 에는 라운드가 지지 않는 문제점이 있었고 [:last-child](https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child)를 활용하여 해당 문제를 해결해주었습니다.
 
 ### 6. **ClickToEdit**
 
