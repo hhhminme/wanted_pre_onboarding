@@ -4,14 +4,17 @@ const Tag = ({ componentName }) => {
   const MAX_TAG_NUM = 5;
 
   const [tags, setTags] = useState([]);
-  const addTags = (event) => {
-    if (event.key === "Enter" && event.target.value !== "") {
+  const addTags = (e) => {
+    if (e.key === "Enter" && e.target.value !== "") {
       if (tags.length >= MAX_TAG_NUM) {
         alert("태그 갯수는 5개를 넘길 수 없습니다!");
       } else {
-        setTags([...tags, event.target.value]);
-        console.log(tags);
-        event.target.value = "";
+        if (tags.includes(e.target.value)) {
+          alert("중복 태그는 입력하실 수 없습니다.");
+        } else {
+          setTags([...tags, e.target.value]);
+          e.target.value = "";
+        }
       }
     }
   };
