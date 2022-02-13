@@ -132,6 +132,7 @@ input을 클릭하였을 때 하단만 border-radius가 사라지고 자동완�
 
 - **구현한 방법과 이유**
   변경하고자 하는 요소에 [DoubleClickEvent](https://medium.com/trabe/prevent-click-events-on-double-click-with-react-with-and-without-hooks-6bf3697abc40)가 발생하면 [State Hook]()을 통해 해당 요소의 수정가능 상태를 관리합니다. 그리고 [Conditional(Ternary) Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)를 통해 값에 따라 display되는 요소를 달리하였습니다.
+  나이가 0살 이하로 입력되는 것은 불가능하기 때문에 음수제한과 이름 입력 최대글자수를 10글자로 제한하였습니다.
   ```
    요소가 수정가능 상태값이 true라면 ? input 요소가 보인다 : 요소의 값이 보인다.
   ```
