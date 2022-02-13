@@ -9,7 +9,7 @@
   }
   /* 토글 배경 */
   .togglebox {
-    @apply w-16 sm:w-20 h-10 flex items-center flex-shrink-0 ml-4 p-1 bg-gray-300 rounded-full;
+    @apply w-16 sm:w-20 h-10 flex items-center flex-shrink-0 ml-8 p-1 bg-gray-300 rounded-full;
   }
   /* 토글 내 버튼 */
   .toggleslide {
