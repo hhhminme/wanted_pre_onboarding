@@ -26,7 +26,7 @@ ES6+ 문법을 최대한 활용하여 개발하고자 노력했습니다. Class 
 
 ### **Code Convention/Deploy**
 
-web Accessability 표준에 맞도록 시멘틱 엘레멘트를 지킬려 노력하였습니다. Cross Browser Test를 하였으며, 모바일 환경에서도 이용할 수 있는 반응형 웹페이지를 만들기 위해 노력했습니다.
+web Accessability 표준에 맞도록 시멘틱 엘레멘트를 지킬려 노력하였습니다. Cross Browser Check(Safari, Microsoft Edge, Firefox, Chrome)를 하였으며, 모바일 환경에서도 이용할 수 있는 반응형 웹페이지를 만들기 위해 노력했습니다.
 
 구현과제의 양이 많지 않고 컴포넌트 구조가 복잡하지 않아 [Tailwind CSS](https://tailwindcss.com/)를 활용하였습니다.
 CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.github.io/TIL/CSS/css-property-order.html#intro)를 참고하여 정리하였습니다.
@@ -55,7 +55,7 @@ CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.g
 
   라이브러리로 사용하던 Toggle 버튼을 Pure CSS로 구현하는게 어려웠습니다. useRef 등을 활용하여 toggle의 clickEvent를 감지하여 DOM 객체의 CSS element를 바꾸는 방법보단 Pure CSS로 개발하는 것이 더욱 직관적이라고 생각하여 Tailwind의 peer's class를 사용했습니다.
 
-  label 태그가 toggle 버튼을 누를때마다 width 값이 계속 미세하게 변하여 좌우로 왔다갔다 합니다. label 태그가 차지하는 width를 고정하는 방법을 찾아보고 있습니다.
+  label 태그가 toggle 버튼을 누를때마다 width 값이 계속 미세하게 변하여 좌우로 왔다갔다 합니다. label 태그가 차지하는 width를 고정하는 방법을 찾아보았고, 자식 요소의 width를 rem이 아닌 px값으로 두고 flex를 활용한 레이아웃으 해결하였습니다.
 
 ### 2. **Modal**
 
@@ -97,7 +97,7 @@ CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.g
 
   [State Hook]()을 통해 사용자가 입력한 내역을 관리합니다. 이때 사용자에게 보여지는 tag와 저장한 상태를 매핑해주는 방식으로 구현하였습니다.
 
-  태그를 저장할때는 [Spread syntax(...)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) 통해 항상 마지막 위치에 저장되도록 하였습니다.
+  태그를 저장할때는 [Spread syntax(...)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) 통해 항상 마지막 위치에 저장되도록 하였습니다. 태그 최대 저장 갯수는 5개이며 중복을 허용하지 않도록 구현 하였습니다.
 
   태그를 삭제할때는 [Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)를 사용하여 사용자가 제거하려는 태그의 인덱스와 일치하는 태그를 찾도록 했습니다. 발견되면 필터링되고 나머지 태그는 [Spread syntax(...)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)를 이용하여 다시 태그 상태를 업데이트합니다.
 
@@ -105,15 +105,7 @@ CSS 속성은 [Mozilla에서 제안한 CSS 속성 기술 순서](http://milooy.g
 
   input focus 외부 div 태그의 border color가 바뀌지 않아 어려움을 겪었습니다. 그래서 input에 outline을 없애고 input과 태그를 모두 감싸고 있는 div 태그에 [:focus-within](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within)을 활용하여 border가 변경되도록 구현하였습니다.
 
-  또한 현재 동일한 텍스트가 3개 들어왔을 경우 가장 먼저 입력한 태그를 삭제해야만 동일 텍스트의 태그가 모두 삭제되는 이슈가 있습니다. 현재 의심 되는 점은 사용자가 제거하려는 태그의 인덱스와 일치하는 태그를 찾도록 해서 동일한 값이 두개 있을 경우, 현재 선택된 태그의 인덱스보다 앞에 있는 태그에 동일한 값이 존재하기 때문에 가장 먼저 생성된 태그를 삭제해야만 원하는 결과가 이루어진다고 생각했습니다.
-
-  이에 대해선 입력 시 중복을 방지하도록 고려하여 addTags() 함수를 리팩토링 하도록 하겠습니다.
-
-  ```javascript
-  const removeTags = (idx) => {
-    setTags([...tags.filter((tag) => tags.indexOf(tag) !== idx)]);
-  };
-  ```
+  태그 작성 시 입력값의 길이가 길어질 경우 사용자 경험을 해치는 문제가 있어 말줄임을 활용하여 입력값이 길 경우 생략하도록 구현하였습니다. 또한 태그가 너무 많아지는 것을 방지하기 위해 태그 갯수의 제한을 두었습니다.
 
 ### 5. **AutoComplete**
 
