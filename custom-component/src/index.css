@@ -5,7 +5,7 @@
 @layer components {
   /* Component 카드 배경*/
   .componentbg {
-    @apply w-[150px] sm:min-w-0 sm:w-1/2 h-60 p-2 first:mt-10 last:mb-10 mb-5 m-auto border border-gray-300 rounded-lg bg-white shadow-md;
+    @apply sm:min-w-0 sm:w-1/2 h-60 p-2 first:mt-10 last:mb-10 mb-5 m-auto border border-gray-300 rounded-lg bg-white shadow-md;
   }
   /* 토글 배경 */
   .togglebox {
