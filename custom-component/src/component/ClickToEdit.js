@@ -26,7 +26,11 @@ const ClickToEdit = ({ componentName }) => {
   };
 
   const handleAgeChange = (e) => {
-    setAgeState(e.target.value);
+    if (e.target.value < 0) {
+      alert("나이는 양수만 입력가능합니다.");
+    } else {
+      setAgeState(e.target.value);
+    }
   };
 
   const handleAgeKeyDown = (e) => {
@@ -49,6 +53,7 @@ const ClickToEdit = ({ componentName }) => {
                 id="name"
                 type="text"
                 value={nameState}
+                maxLength="10"
                 onChange={handleNameChange}
                 onKeyDown={handleNameKeyDown}
                 className="border ml-2 w-40 text-center"
